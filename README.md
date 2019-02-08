@@ -35,3 +35,19 @@ Member Model:
 - phone
 - memebership_fee
 - member_category
+
+# Todo
+
+1. GitHub Repository
+2. Create project
+3. Set up the routes
+4. Create Masterpage
+5. Create Homepage
+6. Create Signup
+7. Create Login
+8. Set up database
+9. Create entities
+10. Create member detail form
+11. Store data in database
+12. Form validation
+13. Retrieve data from database
