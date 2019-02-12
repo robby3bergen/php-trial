@@ -15,7 +15,14 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            #anonymous: true
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
+            logout:
+                path:   /uitloggen
+                target: /
 
             # activate different ways to authenticate
 
@@ -30,3 +37,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/lid-worden, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/uitloggen, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/inloggen, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registreren, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }

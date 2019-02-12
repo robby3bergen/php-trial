@@ -13,6 +13,12 @@
                 <li><a href="{{ path('homepage') }}">Home</a></li>
                 <li><a href="{{ path('lid_worden') }}">Lid worden</a></li>
                 <li>Mijn gegevens</li>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                {% else %}
+                    <li><a href="{{ path('register') }}">Registreren</a></li>
+                    <li><a href="{{ path('login') }}">Inloggen</a></li>
+                {% endif %}
             </ul>
         </nav>
         {% block body %}

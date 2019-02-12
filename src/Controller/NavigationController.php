@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomepageController extends AbstractController
+class NavigationController extends AbstractController
 {
     /**
      * @Route("/", name="homepage", methods={"GET"})
@@ -33,4 +33,7 @@ class HomepageController extends AbstractController
 
         return $this->render('lid_worden.html.twig');
     }
+
+    // TODO:
+    // @Route 'page-not-found'
 }
