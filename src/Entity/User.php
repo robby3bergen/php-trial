@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -39,6 +41,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $email;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Member", mappedBy="User")
+     */
+    private $Membership;
+
+    public function __construct()
+    {
+        $this->Membership = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -121,6 +133,37 @@ class User implements UserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Member[]
+     */
+    public function getMembership(): Collection
+    {
+        return $this->Membership;
+    }
+
+    public function addMembership(Member $membership): self
+    {
+        if (!$this->Membership->contains($membership)) {
+            $this->Membership[] = $membership;
+            $membership->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMembership(Member $membership): self
+    {
+        if ($this->Membership->contains($membership)) {
+            $this->Membership->removeElement($membership);
+            // set the owning side to null (unless already changed)
+            if ($membership->getUser() === $this) {
+                $membership->setUser(null);
+            }
+        }
 
         return $this;
     }

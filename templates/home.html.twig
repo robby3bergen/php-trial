@@ -2,6 +2,30 @@
 
 {% block body %}
 
-<h1>{{ title }}</h1>
+    <h1>Sportvereniging PHP Symfony</h1>
+    <div class="flex-container">
+    <section id="articles">
+        {% for article in articles %}
+            <article>
+                <a href="#">
+                    <h2>{{ article.title }}</h2>
+                    <img src="{{ article.imageUrl }}" alt="{{ article.title }}" />
+                    <p>{{ article.content }}</p>
+                </a>
+            </article>
+        {% endfor %}
+    </section>
+    <aside>
+        <div id="evenement">
+            <a href="#">Kom naar ons evenement...</a>
+        </div>
+        <div id="word-lid">
+            <a href="#">Word lid!</a>
+        </div>
+        <div id="mailings">
+            <a href="#">Op de hoogte blijven?</a>
+        </div>
+    </aside>
+    </div>
 
 {% endblock %}

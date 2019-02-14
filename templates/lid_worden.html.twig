@@ -2,6 +2,26 @@
 
 {% block body %}
 
-{{ include('member_details.html.twig') }}
+{#{{ include('member_details.html.twig') }}#}
+
+    <form action="/lidmaatschap-instellen" method="post">
+        <label for="firstName">Voornaam</label>
+        <input type="text" id="firstName" name="_firstName" value="{{ membership.first_name }}">
+        <label for="lastName">Achternaam</label>
+        <input type="text" id="lastName" name="_lastName" value="{{ membership.last_name }}">
+        <label for="street">Straat</label>
+        <input type="text" id="street" name="_street" value="{{ membership.street }}">
+        <label for="housenumber">Huisnummer</label>
+        <input type="text" id="housenumber" name="_housenumber" value="{{ membership.housenumber }}">
+        <label for="postal_code">Postcode</label>
+        <input type="text" id="postal_code" name="_postal_code" value="{{ membership.postal_code }}">
+        <label for="city">Plaats</label>
+        <input type="text" id="city" name="_city" value="{{ membership.city }}">
+        <label for="membership_fee">Contributie</label>
+        <input type="number" id="membership_fee" name="_membership_fee" value="{{ membership.membership_fee }}">
+        <label for="category">Categorie</label>
+        <input type="text" id="category" name="_category" value="{{ membership.category }}">
+        <button type="submit">Aanmelden</button>
+    </form>
 
 {% endblock %}

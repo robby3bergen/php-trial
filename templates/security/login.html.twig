@@ -8,11 +8,24 @@
         </div>
     {% endif %}
 
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Gebruikersnaam</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
-        <label for="password">Wachtwoord</label>
-        <input type="password" id="password" name="_password" />
-        <button type="submit">Inloggen</button>
-    </form>
+    <div class="container">
+        <h1>INLOGGEN OF REGISTREREN</h1>
+        <div class="flex-container">
+            <form action="{{ path('login') }}" method="post">
+                <div>
+                    <label for="username">Gebruikersnaam</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                </div>
+                <div>
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" id="password" name="_password" />
+                    <button type="submit">Inloggen</button>
+                </div>
+            </form>
+        </div>
+        <p>
+            Heb je nog geen account, dan kun je je hier <a href="{{ path('register') }}">registreren</a>
+        </p>
+    </div>
+
 {% endblock %}

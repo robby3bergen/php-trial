@@ -34,6 +34,7 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            // save user data in the database
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
