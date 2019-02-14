@@ -56,7 +56,7 @@ class NavigationController extends AbstractController
 
     public function getMemberData() {
         $userId = $this->getUser()->getId();
-        dump($userId);
+
         $membership = $this->getDoctrine()->getRepository(Member::class)->find($userId);
         $membership !== null ? $firstName = $membership->getFirstName() : $firstName = 'Test';
 
