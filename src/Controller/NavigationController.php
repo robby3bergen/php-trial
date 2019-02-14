@@ -78,13 +78,12 @@ class NavigationController extends AbstractController
 
         // TODO: get form data
         $firstName =  $request->get('_firstName');
-        dump($firstName);
 
         // TODO: validate form data
         //
 
         // TODO: save form data
-        $member->setFirstName('Robby')->setCategory('race')->setCity('Driebergen')->setHousenumber('175')->setLastName('van Rheenen')->setMembershipFee(250)->setPostalCode('3972 DE')->setStreet('Damhertlaan')->setUser($this->getUser());
+        $member->setFirstName($firstName)->setCategory('race')->setCity('Driebergen')->setHousenumber('175')->setLastName('van Rheenen')->setMembershipFee(250)->setPostalCode('3972 DE')->setStreet('Damhertlaan')->setUser($this->getUser());
 
         $entityManager->persist($member);
 

@@ -3315,7 +3315,7 @@
                 "php": "^7.1.3",
                 "psr/log": "~1.0",
                 "symfony/contracts": "^1.0.2",
-                "symfony/debug": "~3.4|~4.0",
+                /*"symfony/debug": "~3.4|~4.0",*/
                 "symfony/event-dispatcher": "~4.1",
                 "symfony/http-foundation": "^4.1.1",
                 "symfony/polyfill-ctype": "~1.8"
@@ -6057,7 +6057,7 @@
             "require": {
                 "easycorp/easy-log-handler": "^1.0.7",
                 "php": "^7.0",
-                "symfony/debug-bundle": "*",
+                /*"symfony/debug-bundle": "*",*/
                 "symfony/monolog-bundle": "^3.0",
                 "symfony/profiler-pack": "*",
                 "symfony/var-dumper": "*"
