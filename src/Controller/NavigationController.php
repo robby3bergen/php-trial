@@ -90,6 +90,6 @@ class NavigationController extends AbstractController
 
         $entityManager->flush();
 
-        return $this->render('home.html.twig');
+        return $this->redirectToRoute('homepage');
     }
 }
